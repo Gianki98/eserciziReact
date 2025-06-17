@@ -1,10 +1,11 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import Welcome from "./components/Welcome.jsx";
+import Age from "./components/Age.jsx";
 
 function App() {
   return (
     <>
-      <Saluto />
+      <Welcome name="Luca" age={18} />
     </>
   );
 }
