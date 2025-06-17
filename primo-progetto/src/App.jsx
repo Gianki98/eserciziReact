@@ -1,10 +1,15 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import Hello from "./components/Hello.jsx";
+import Message from "./components/message.jsx";
 
 function App() {
   return (
     <>
-      <Saluto />
+      <div>
+        <Hello /> 
+        <Message />
+        <Hello />
+      </div>
     </>
   );
 }
