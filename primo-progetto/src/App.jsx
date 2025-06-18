@@ -1,6 +1,5 @@
 import "./App.css";
 import Welcome from "./components/Welcome.jsx";
-import Age from "./components/Age.jsx";
 
 function App() {
   return (
