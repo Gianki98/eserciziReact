@@ -1,24 +1,22 @@
 import Age from "./Age";
 import Message from "./Message";
 
-function Welcome(props) {
+function Welcome({ name, age }) {
   return (
     <>
       <p>
-        Welcome <strong>{props.name || "Utente"}</strong>!
+        Welcome <strong>{name || "Utente"}</strong>!
       </p>
 
-      {props.age > 18 && <Age age={props.age} />}
+      {age > 18 && <Age age={age} />}
 
-      {props.age != null && <Age age={props.age} />}
+      {age !== undefined && age !== null && <Age age={age} />}
 
-      {props.age > 18 && props.age < 65 && <Age age={props.age} />}
+      {age > 18 && age < 65 && <Age age={age} />}
 
-      {props.age > 18 && props.name === "John" && <Age age={props.age} />}
+      {age > 18 && name === "John" && <Age age={age} />}
 
-      <Age age={props.age} />
-
-      <Message age={props.age} />
+      <Message age={age} />
     </>
   );
 }
