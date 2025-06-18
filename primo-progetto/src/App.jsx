@@ -1,10 +1,15 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import AlertClock from "./components/AlertClock";
 
 function App() {
+  const handleShowTime = () => {
+    const currentTime = new Date().toLocaleTimeString();
+    alert(`L'ora corrente è: ${currentTime}`);
+  };
+
   return (
     <>
-      <Saluto />
+      <AlertClock onClick={handleShowTime} />
     </>
   );
 }
