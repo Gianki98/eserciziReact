@@ -1,10 +1,12 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import Clock from "./components/Clock.jsx";
+import Counter from "./components/Counter.jsx";
 
 function App() {
   return (
     <>
-      <Saluto />
+      <Counter />
+      <Clock />
     </>
   );
 }
