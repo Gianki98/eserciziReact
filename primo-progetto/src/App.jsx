@@ -1,10 +1,16 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import InteractiveWelcome from "./components/InteractiveWelcome.jsx";
+import Login from "./components/Login.jsx";
 
 function App() {
+  const handleLogin = (loginData) => {
+    console.log("Login data:", loginData);
+  };
+
   return (
     <>
-      <Saluto />
+      <InteractiveWelcome />
+      <Login onLogin={handleLogin} />
     </>
   );
 }
