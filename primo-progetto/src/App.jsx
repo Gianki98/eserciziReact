@@ -1,10 +1,10 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import ChatInterface from "./components/ChatInterface";
 
 function App() {
   return (
     <>
-      <Saluto />
+      <ChatInterface />
     </>
   );
 }
