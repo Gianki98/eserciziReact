@@ -1,10 +1,10 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import MouseClicker from "./components/MouseClicker";
 
 function App() {
   return (
     <>
-      <Saluto />
+      <MouseClicker />
     </>
   );
 }
