@@ -1,21 +1,30 @@
 import { useState } from "react";
 
-function Login({ onLogin }) {
+function Login({ onLogin, database }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
 
-  
+  const [users, setUsers] = useState(database);
+  const [message, setMessage] = useState("");
   const handleSubmit = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     onLogin({
       username: username,
       password: password,
-      remember: remember
+      remember: remember,
     });
+
+    const userExist = users.find(
+      (x) => x.username === username && x.password === password
+    );
+    if (userExist) {
+      setMessage(`Il Login al sito e' avvenuta con successo!`);
+    } else {
+      setMessage(`Credenziali errate!`);
+    }
   };
 
-  
   const handleReset = () => {
     setUsername("");
     setPassword("");
@@ -45,6 +54,7 @@ function Login({ onLogin }) {
       <button type="button" onClick={handleReset}>
         Reset
       </button>
+      {message && <p>{message}</p>}
     </form>
   );
 }
