@@ -1,10 +1,10 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import UncontrolledLogin from "./components/UncontrolledLogin.jsx";
 
 function App() {
   return (
     <>
-      <Saluto />
+      <UncontrolledLogin />
     </>
   );
 }
