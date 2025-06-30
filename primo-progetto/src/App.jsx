@@ -1,12 +1,8 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import TodoList from "./TodoList";
 
 function App() {
-  return (
-    <>
-      <Saluto />
-    </>
-  );
+  return <TodoList />;
 }
 
 export default App;
