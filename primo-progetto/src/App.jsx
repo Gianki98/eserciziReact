@@ -1,11 +1,16 @@
+import React from "react";
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import FocusableInput from "./FocusableInput";
+import { MountTracker } from "./MountTracker";
 
 function App() {
   return (
-    <>
-      <Saluto />
-    </>
+    <React.StrictMode>
+      <div>
+        <FocusableInput />
+        <MountTracker />
+      </div>
+    </React.StrictMode>
   );
 }
 
