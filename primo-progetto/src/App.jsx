@@ -1,11 +1,19 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import Welcome from "./Welcome";
+import CounterDisplay from "./CounterDisplay";
+import Login from "./Login";
 
 function App() {
   return (
-    <>
-      <Saluto />
-    </>
+    <div className="app-container">
+      <h1>Styling Components</h1>
+
+      <Welcome />
+
+      <CounterDisplay />
+
+      <Login />
+    </div>
   );
 }
 
