@@ -1,10 +1,13 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import Container from "./components/Container";
 
 function App() {
   return (
     <>
-      <Saluto />
+      <Container title="Il mio contenitore">
+        <p>Questo contenuto può essere nascosto!</p>
+        <button>Un pulsante</button>
+      </Container>
     </>
   );
 }
