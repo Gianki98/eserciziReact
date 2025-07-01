@@ -1,10 +1,10 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import Hello from "./components/Hello.jsx";
 
 function App() {
   return (
     <>
-      <Saluto />
+      <Hello />
     </>
   );
 }
