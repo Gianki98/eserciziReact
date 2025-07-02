@@ -8,7 +8,7 @@ function Container({ children, title }) {
   };
   return (
     <div style={containerStyle}>
-      <h3 onClick={() => setIsCollapsed(!isCollapsed)}>{title}</h3>
+      <button onClick={() => setIsCollapsed(!isCollapsed)}>{title}</button>
       {!isCollapsed && children}
     </div>
   );
