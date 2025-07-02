@@ -14,10 +14,10 @@ function App() {
           value={selectedLanguage}
           onChange={(e) => setSelectedLanguage(e.target.value)}
         >
-          <option value="en">English</option>
+          <option value="en">Inglese</option>
           <option value="it">Italiano</option>
-          <option value="es">Español</option>
-          <option value="fr">Français</option>
+          <option value="es">Spagnolo</option>
+          <option value="fr">Francese</option>
         </select>
 
         <Hello />

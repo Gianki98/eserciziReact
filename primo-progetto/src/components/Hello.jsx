@@ -8,7 +8,7 @@ function Hello() {
   const translations = {
     en: "Hello, World!",
     it: "Ciao, Mondo!",
-    es: "¡Hola, Mundo!",
+    es: "Hola, Mundo!",
     fr: "Bonjour, Monde!"
   };
 
