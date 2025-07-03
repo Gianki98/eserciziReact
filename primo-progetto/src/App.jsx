@@ -1,11 +1,12 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import GithubUsers from "./components/GithubUsers";
 
 function App() {
   return (
-    <>
-      <Saluto />
-    </>
+    <div>
+      <h1>GitHub Users App</h1>
+      <GithubUsers />
+    </div>
   );
 }
 
