@@ -1,11 +1,18 @@
 import "./App.css";
-import Saluto from "./components/saluto.jsx";
+import CounterOptimized from "./components/CounterOptimized";
+import FilteredListDemo from "./components/FilteredListDemo";
 
 function App() {
   return (
-    <>
-      <Saluto />
-    </>
+    <div>
+      <h1>useCallback and useMemo Examples</h1>
+      
+      
+      <CounterOptimized />
+      
+      
+      <FilteredListDemo />
+    </div>
   );
 }
 
