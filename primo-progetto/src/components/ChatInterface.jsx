@@ -47,10 +47,10 @@ const ChatInterface = () => {
         sent: false,
       };
 
-      setMessages((prev) => [...prev, errorMessage, messages.length]);
+      setMessages((prev) => [...prev, errorMessage]);
       setShouldFetchBot(false);
     }
-  }, [error, shouldFetchBot]);
+  }, [error, shouldFetchBot,messages.length]);
 
   const handleSendMessage = () => {
     const trimmed = newMessage.trim();
