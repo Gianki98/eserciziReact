@@ -1,51 +1,27 @@
-import { useState, useEffect } from "react";
+import useSWR from 'swr';
 
 function useGithubUser(username) {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  // Funzione per fetchare i dati
-  const fetchUser = async () => {
-    // Se non c'è username, non fare nulla
-    if (!username) {
-      setUser(null);
-      setError(null);
-      setLoading(false);
-      return;
-    }
-
-    try {
-      setLoading(true);
-      setError(null);
-
-      const response = await fetch(`https://api.github.com/users/${username}`);
-
-      if (!response.ok) {
-        throw new Error("User not found");
-      }
-
-      const userData = await response.json();
-      setUser(userData);
-    } catch (err) {
-      setError(err.message);
-      setUser(null);
-    } finally {
-      setLoading(false);
-    }
+  // Costruisci l'URL solo se username non è null
+  // Se username è null, passa null a useSWR (non farà la richiesta)
+  const url = username ? `https://api.github.com/users/${username}` : null;
+  
+  // useSWR gestisce automaticamente loading, error, cache, ecc.
+  // Il fetcher viene preso dalla configurazione globale di SWRConfig
+  const { data, error, isLoading, mutate } = useSWR(url);
+  
+  // Funzione per refetch manuale
+  // mutate() ricarica i dati
+  // Con revalidate: true forza il refetch anche se i dati sono in cache
+  const refetch = () => {
+    return mutate(undefined, { revalidate: true });
   };
+  
 
-  // Effetto che si attiva quando cambia l'username
-  useEffect(() => {
-    fetchUser();
-  }, [username]);
-
-  // Restituiamo tutto ciò che serve
   return {
-    user,
-    error,
-    loading,
-    refetch: fetchUser,
+    user: data,
+    loading: isLoading,
+    error: error,
+    refetch
   };
 }
 
